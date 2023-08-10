@@ -11,8 +11,8 @@ class RoutingGraph(Graph):
         agent_list = []
         goal_list = []
         map_list = []
-        map_str.strip()
-        split_map_rows = map_str.splitlines()
+        strip_map_str = map_str.strip()
+        split_map_rows = strip_map_str.splitlines()
         for row, row_contents in enumerate(split_map_rows):
             temp_row = []
             strip_row_contents = row_contents.strip()
@@ -51,8 +51,8 @@ class RoutingGraph(Graph):
                 for search_col, char in enumerate(row_contents):
                     if char == 'P' and search_row != row and search_col != col:
                         cost = 10
-                        head = (search_col, search_col, fuel)
-                        action_string = "Teleport to ({row}, {col})".format(row=search_col, col=search_col)
+                        head = (search_row, search_col, fuel)
+                        action_string = "Teleport to ({row}, {col})".format(row=search_row, col=search_col)
                         yield Arc(tail, head, action_string, cost)
 
         if self.map_list[row][col] == 'F' and fuel < 9:     # The agent can use 'Fuel up' action
