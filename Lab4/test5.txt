@@ -1,0 +1,3 @@
+test_answer :-
+    diagnosis(X, 19, no, 5),
+    writeln(X). 

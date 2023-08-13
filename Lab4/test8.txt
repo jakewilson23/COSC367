@@ -1,0 +1,6 @@
+test_answer :-
+    mirror(tree(leaf(foo), tree(leaf(bar), leaf(floo))), T),
+    write(T).
+
+test_answer :-
+    write('Wrong answer!').
