@@ -1,0 +1,5 @@
+test_answer1 :- preorder(leaf(a), L), 
+               writeln(L).
+
+test_answer2 :- preorder(tree(a, tree(b, leaf(c), leaf(d)), leaf(e)), T), 
+               writeln(T).
